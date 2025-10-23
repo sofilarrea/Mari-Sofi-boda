@@ -40,3 +40,16 @@ window.addEventListener("scroll", () => {
       }
     }, 1500); // tiempo que dura el preloader visible
   });
+  // Zoom efecto al hacer scroll
+window.addEventListener("scroll", () => {
+  document.querySelectorAll(".zoom-on-scroll img").forEach(img => {
+    const rect = img.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    if (rect.top < windowHeight && rect.bottom > 0) {
+      // Calcula cuánto scroll ha entrado en la pantalla
+      let progress = 1 + (0.15 * (1 - rect.top / windowHeight));
+      img.style.transform = `scale(${progress})`;
+    }
+  });
+});

@@ -511,7 +511,7 @@ body {
 }
 /* Timeline general */
 .timeline-section {
-  padding: 100px 10%;
+  padding:  10%;
   background: #fdfdfd;
 }
 
@@ -528,7 +528,7 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 100px;
+  /* gap: 100px; */
 }
 
 /* Línea central */
@@ -587,6 +587,41 @@ body {
     text-align: center;
   }
 }
+.story-photos{
+  background-color: #fdfdfd;
+}
+.photo-main{
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 50px;
+}
+
+.photo-main img{
+  max-width: 500px;
+  border-radius: 10px;
+
+}
+
+.photo-overlay{
+  display: flex;
+  justify-content: space-evenly;
+
+
+}
+
+.photo-overlay img{
+max-width: 500px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.titl{
+position: relative;
+left: 60%;
+}
+
+
+
+
 
 
 
