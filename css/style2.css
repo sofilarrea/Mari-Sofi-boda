@@ -597,7 +597,7 @@ body {
 }
 
 .photo-main img{
-  max-width: 500px;
+  max-width: 700px;
   border-radius: 10px;
 
 }
@@ -610,13 +610,13 @@ body {
 }
 
 .photo-overlay img{
-max-width: 500px;
+max-width: 700px;
   object-fit: cover;
   border-radius: 10px;
 }
 .titl{
 position: relative;
-left: 60%;
+left: 30%;
 }
 
 
@@ -668,4 +668,23 @@ left: 60%;
   .divider {
     margin: 0 auto 20px;
   }
+  
+.photo-main img{
+  max-width: 200px;
+
+}
+
+.titl{
+  position: unset;
+}
+h3.section-subtitle {
+    display: flex
+;
+    justify-content: center;
+}
+
+.photo-overlay img{
+max-width: 200px;
+  
+}
 }
