@@ -147,7 +147,7 @@ Distinguida en sus estudios, se recibió con notas excelentes y realizó su resi
   </div>
 </section>
 
-<section class="hero-frame">
+<section class="hero-frame" id="rsvp">
   <!-- ilustración alineada a la derecha (reemplazá por tu playa) -->
   <div class="hero-illustration" aria-hidden="true"></div>
 
@@ -163,8 +163,84 @@ Distinguida en sus estudios, se recibió con notas excelentes y realizó su resi
   </div>
   
 </section>
+<section id="rsvp" class="rsvp-section">
+  <div class="rsvp-content">
+  
+
+   <form id="rsvp-form">
+
+  <!-- Nombre -->
+  <label for="name">Nombre</label>
+  <input type="text" name="name" id="name" required>
+
+  <!-- Teléfono -->
+  <label for="phone">Teléfono</label>
+  <input type="text" name="phone" id="phone" required>
+
+  <!-- Email -->
+  <label for="email">Email</label>
+  <input type="email" name="email" id="email" required>
+
+  <!-- Asistencia -->
+  <label>¿Asistirás a la boda?</label>
+  <div class="inline-options">
+    <label><input type="radio" name="asistira" value="Sí" required> Sí</label>
+    <label><input type="radio" name="asistira" value="No" required> No</label>
+  </div>
+
+  <!-- Personas -->
+  <label for="cantidad_personas">¿Cuántas personas asistirán?</label>
+  <select name="cantidad_personas" id="cantidad_personas">
+    <option value="">Selecciona...</option>
+    <option value="1">1 persona</option>
+    <option value="2">2 personas</option>
+    <option value="3">3 personas</option>
+    <option value="4">4 personas</option>
+  </select>
+
+  <!-- Niños -->
+  <label>¿Lleva niños?</label>
+  <div class="inline-options">
+    <label><input type="radio" name="lleva_ninos" value="Sí"> Sí</label>
+    <label><input type="radio" name="lleva_ninos" value="No"> No</label>
+  </div>
+
+  <!-- Transporte -->
+  <label>¿Necesitarás transporte el día de la boda?</label>
+  <div class="inline-options">
+    <label><input type="radio" name="transporte" value="Sí"> Sí</label>
+    <label><input type="radio" name="transporte" value="No"> No</label>
+  </div>
+
+  <!-- Restricciones alimentarias -->
+  <label>¿Tenés restricciones alimentarias?</label>
+  <div class="inline-options">
+    <label><input type="radio" name="restricciones_toggle" value="Sí"> Sí</label>
+    <label><input type="radio" name="restricciones_toggle" value="No"> No</label>
+  </div>
+
+  <div id="diet-options" hidden>
+    <label><input type="checkbox" name="restricciones[]" value="celiaco"> Celíaco/a / Sin gluten</label>
+    <label><input type="checkbox" name="restricciones[]" value="vegetariano"> Vegetariano/a</label>
+    <label><input type="checkbox" name="restricciones[]" value="vegano"> Vegano/a</label>
+    <label><input type="checkbox" id="diet-otros" value="otros"> Otros</label>
+    <input type="text" id="diet-otros-text" name="otros" placeholder="Especificar" hidden>
+  </div>
+
+  <!-- Botón -->
+  <button type="submit" id="send-btn" class="btn-submit">Enviar confirmación</button>
+
+  <!-- Feedback -->
+  <p id="form-status" aria-live="polite"></p>
+</form>
+
+  </div>
+</section>
+
 
 <script src="/main.js"></script>
+<script src="/rspv.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollSmoother.min.js"></script>

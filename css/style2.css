@@ -667,80 +667,96 @@ body {
   line-height: 1.2;
 }
 .rsvp-section {
+  position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   background: url('/assets/images/fondo-hero.png') no-repeat center center;
   background-size: cover;
-  position: relative;
 }
 
 .rsvp-section::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.9); /* overlay delicado */
 }
 
-.rsvp-inner {
+.rsvp-content {
   position: relative;
-  max-width: 500px;
-  width: 100%;
-  padding: 40px;
-  font-family: "Inter", sans-serif;
+  z-index: 1;
+  max-width: 600px;
+  width: 90%;
+  text-align: center;
 }
 
 .rsvp-title {
   font-family: "Cormorant Garamond", serif;
-  font-size: 3rem;
+  font-size: clamp(50px, 10vw, 120px);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
   color: #224236;
-  text-align: center;
-  margin-bottom: 2rem;
 }
 
-form label {
-  font-size: 0.9rem;
-  letter-spacing: 0.05em;
+.section-subtitle {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
   color: #224236;
+  opacity: 0.8;
+}
+
+
+/* Formulario */
+#rsvp-form {
+  text-align: left;
+  font-family: "Inter", sans-serif;
+  color: #224236;
+}
+
+#rsvp-form label {
   display: block;
-  margin-top: 1.2rem;
-}
-
-form input,
-form select {
-  width: 100%;
-  border: none;
-  border-bottom: 1px solid #224236;
-  padding: 8px 2px;
-  background: transparent;
-  font-size: 1rem;
+  font-size: 14px;
+  margin-top: 1.4rem;
+  margin-bottom: 0.4rem;
   color: #224236;
 }
 
-form input:focus,
-form select:focus {
+#rsvp-form input[type="text"],
+#rsvp-form input[type="email"],
+#rsvp-form select,
+#rsvp-form input[type="number"] {
+  width: 100%;
+  padding: 10px 2px;
+  border: none;
+  border-bottom: 1px solid #a3b1a9;
+  background: transparent;
+  font-size: 15px;
+  color: #224236;
+  transition: border-color .3s ease;
+}
+#rsvp-form input:focus,
+#rsvp-form select:focus {
   outline: none;
-  border-bottom: 2px solid #123026;
+  border-bottom: 2px solid #224236;
 }
 
 .inline-options {
   display: flex;
-  gap: 20px;
-  margin-top: 0.5rem;
-  font-size: 0.95rem;
-  color: #224236;
+  gap: 1.5rem;
+  font-size: 14px;
+  margin-top: 0.3rem;
 }
 
 #diet-options {
   margin-top: 1rem;
-  display: none; /* oculto hasta que se active */
-  font-size: 0.9rem;
+  display: none;
+  font-size: 14px;
 }
-
 #diet-options label {
   display: block;
-  margin-bottom: 0.4rem;
+  margin-bottom: 6px;
 }
 
 .btn-submit {
@@ -750,12 +766,11 @@ form select:focus {
   border: 1px solid #224236;
   background: transparent;
   color: #224236;
-  font-size: 1rem;
-  letter-spacing: 0.08em;
+  font-size: 15px;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all .3s ease;
 }
-
 .btn-submit:hover {
   background: #224236;
   color: #fff;
