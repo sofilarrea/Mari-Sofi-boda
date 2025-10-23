@@ -14,17 +14,17 @@ html {
   scroll-behavior: smooth;
 }
 
-
-
-/* ===== TEXTO CENTRAL ===== */
-.hero-center{
-  position:relative;
-  display:grid;
-  place-items:center;
-  min-height:100vh;
-  text-align:center;
-  padding: 8vh 6vw;
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #fafafa url("/assets/images/fondo-playa.svg") no-repeat center top;
+  background-attachment: fixed;   /* clave: el fondo se queda fijo */
+  background-size: cover;        /* o "contain" si es un patrón */
+  scroll-behavior: smooth;       /* scroll nativo suave */
 }
+
+
+
 
 .hero-title{
   font-family:"Cormorant Garamond", serif;
@@ -38,14 +38,6 @@ html {
   font-weight:700;
 }
 
-/* ===== BORDE / MARCOS FINOS (opcional) ===== */
-.hero-frame::before,
-.hero-frame::after{
-  content:"";
-  position:absolute; inset:0;
-  border:1px solid rgba(34,66,54,.22);
-  pointer-events:none;
-}
 
 /* ===== HUD / ELEMENTOS PERIFÉRICOS ===== */
 
@@ -61,16 +53,17 @@ html {
   text-align:right; letter-spacing:.08em;
 }
 
-/* Menú vertical izquierdo */
-/* Menú lateral con estilo vertical */
+
+/* Navbar lateral fija en desktop */
 .side-nav {
-  position: absolute;
+  position: fixed;   /* 👈 ahora siempre visible */
   left: 30px;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  gap: 40px; /* espacio entre items */
+  gap: 40px;
+  z-index: 100;      /* se asegura que quede por encima del fondo */
 }
 
 .side-nav a {
@@ -103,6 +96,7 @@ html {
 }
 
 /* Scroll indicator */
+/* Scroll Indicator */
 .scroll-indicator {
   position: absolute;
   left: 30px;
@@ -111,8 +105,12 @@ html {
   height: 48px;
   border: 1px solid rgba(34,66,54,.4);
   border-radius: 50%;
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  animation: bounce 2s infinite;
 }
 
 .scroll-indicator .arrow {
@@ -120,6 +118,20 @@ html {
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
   border-top: 8px solid #224236;
+}
+
+/* Efecto rebote */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(6px); }
+  60% { transform: translateY(3px); }
+}
+
+/* Estado oculto */
+.scroll-indicator.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
 }
 
 
@@ -139,8 +151,8 @@ html {
 /* Indicador scroll */
 .scroll-indicator {
   position: absolute;
-  left: 30px;
-  bottom: 40px;
+      left: 110px;
+    bottom: 160px;
   width: 48px;
   height: 48px;
   border: 1px solid rgba(34,66,54,.4);
@@ -222,17 +234,27 @@ html {
   color: #224236;
 }
 /* Header */
+/* Por defecto: escondemos el header mobile en desktop */
 .mobile-header {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  padding: 16px 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
-  background: transparent;
+  display: none;
 }
+
+/* Solo en pantallas pequeñas (ej: <= 900px) se muestra */
+@media (max-width: 900px) {
+  .mobile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: #fafafa;
+  }
+}
+
+
 
 /* Logo */
 .logo {
@@ -347,4 +369,196 @@ html {
 .vlink:focus-visible > span::after{
   transform: translateX(-50%) scaleX(1);
   opacity: 1;
+}
+.date-invite {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;   /* 👈 fuerza los elementos arriba */
+  padding: 40px 12% 140px;  /* 👈 menos espacio arriba */
+  background: #fdfdfd;
+  overflow: hidden;
+}
+
+.date-column {
+  align-self: start;   /* 👈 se pega arriba */
+  margin-top: 0;       /* 👈 sin margen extra */
+  position: relative;
+  z-index: 2;
+}
+
+.invite-column {
+  align-self: start;   /* 👈 también arriba */
+  position: relative;
+  z-index: 2;
+}
+
+.big-number {
+  position: absolute;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 28vw;
+  color: transparent;
+  -webkit-text-stroke: 1px #c3c2c0;
+  opacity: 0.15;
+  left: 0;
+  bottom: -5%;
+  line-height: 1;
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+.date-column,
+.invite-column {
+  position: relative;
+  z-index: 2; /* para que queden encima del 7 */
+}
+
+/* subtítulos */
+.section-subtitle {
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  font-weight: 500;
+  color: #224236;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+}
+
+.divider {
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: #ccc;
+  margin-bottom: 24px;
+}
+
+/* fecha */
+.date-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 600;
+  color: #224236;
+  line-height: 1.2;
+}
+
+/* invitación */
+.invite-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 24px;
+}
+
+/* link RSVP */
+.invite-link {
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #224236;
+  border-bottom: 1px solid #224236;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+.invite-link:hover {
+  color: #123026;
+  border-color: #123026;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .date-invite {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 60px;
+  }
+  .big-number {
+    font-size: 50vw;
+    left: 50%;
+    bottom: 5%;
+    transform: translateX(-50%);
+  }
+  .divider {
+    margin: 0 auto 20px;
+  }
+}
+
+/* === PRELOADER === */
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: #224236; /* verde */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+/* Polígono spinner */
+.polygon {
+  width: 80px;
+  height: 80px;
+  border: 2px solid rgba(255,255,255,0.5);
+  clip-path: polygon(50% 0%, 93% 25%, 75% 93%, 25% 93%, 7% 25%);
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+  0%   { transform: rotate(0deg) scale(1); }
+  50%  { transform: rotate(180deg) scale(1.1); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+#preloader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+
+
+
+
+/* En mobile (ej: <=900px) lo ocultamos */
+@media (max-width: 900px) {
+  .side-nav,
+  .hud-madeby,
+  .scroll-indicator,
+  .hud-scroll {
+    display: none;
+  }
+  .hero-dot{
+    display: none;
+  }
+  .date-invite {
+    grid-template-columns: 1fr; /* una sola columna */
+    gap: 60px;
+    text-align: center;
+    padding: 80px 8%;
+  }
+
+  /* El número gigante lo bajamos y lo centramos */
+  .big-number {
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 50vw; /* más grande para mobile */
+    opacity: 0.1;
+  }
+
+  /* La fecha centrada */
+  .date-column {
+    text-align: center;
+  }
+
+  /* El invite debajo */
+  .invite-column {
+    text-align: center;
+  }
+
+  /* La línea se centra */
+  .divider {
+    margin: 0 auto 20px;
+  }
 }

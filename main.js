@@ -14,3 +14,29 @@ hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('active');
   mobileNav.classList.toggle('active');
 });
+
+const scrollIndicator = document.querySelector(".scroll-indicator");
+
+// Ocultar al hacer scroll
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) {
+    scrollIndicator.classList.add("hidden");
+  } else {
+    scrollIndicator.classList.remove("hidden");
+  }
+});
+
+ window.addEventListener("load", () => {
+    const preloader = document.getElementById("preloader");
+
+    // Fade out + scroll
+    setTimeout(() => {
+      preloader.classList.add("hidden");
+
+      // scroll suave a la sección
+      const target = document.querySelector("#date-invite");
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 1500); // tiempo que dura el preloader visible
+  });
