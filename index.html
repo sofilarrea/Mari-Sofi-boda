@@ -9,14 +9,20 @@
   <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script> <!-- Reemplazá "your-kit-code" -->
 </head>
 <body>
-<header class="sidebar">
-  <nav class="sidebar__nav">
+<header class="topbar">
+  <div class="brand">Sofi & Mari</div>
+  <button class="hamburger" id="hamburger">☰</button>
+</header>
+
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar__nav">
     <a href="#historia">Historia</a>
     <a href="#detalles">Detalles</a>
     <a href="#rsvp">RSVP</a>
-    <a href="#lugar">Lanzarote</a>
-  </nav>
-</header>
+    <a href="#lanzarote">Lanzarote</a>
+  </div>
+</nav>
+
 
 <section class="hero">
   <div class="hero__left">
@@ -29,7 +35,27 @@
 </section>
 
 
-<!-- Aquí seguirían las otras secciones: historia, detalles, RSVP, galería -->
+<section class="historia">
+  <h2>Nuestra historia</h2>
+  <div class="historia__grid">
+    <div class="historia__item">
+      <h4>España</h4>
+      <h3>Sofi</h3>
+      <img src="/assets/images/sofi-chiquita.jpeg" alt="Foto Sofi">
+      <p>
+        Segunda de dos hermanos, con una mezcla explosiva de raíces irlandesas y españolas, y una paleta de pádel que parece extensión de su brazo. Desde chica, su pasión por los demás se coló en cada rincón de su personalidad, combinando un carácter sensible con una dosis justa de picardía. Capaz de emocionarse con un gesto amable… y de pelear cada punto en la cancha como si fuera una final mundial.
+      </p>
+    </div>
+    <div class="historia__item">
+      <h4>Argentina</h4>
+      <h3>Mari</h3>
+      <img src="/assets/images/mari-niña.jpeg" alt="Foto Mari">
+      <p>
+       Oriunda de Mendoza, Argentina, la segunda de cinco hermanos, Mari siempre se destacó. Cuenta la leyenda que a HORAS de nacida ya levantaba curiosa su cabeza, anécdota que nunca sabremos si es cierta, lo que sí podemos afirmar es su temperamento especial que hace que sea única, dicen los dichos que es debido a la alta tolerancia a bromas de su particular hermano mayor.
+      </p>
+    </div>
+  </div>
+</section>
 
 
 
