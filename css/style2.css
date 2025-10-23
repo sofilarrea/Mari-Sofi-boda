@@ -63,7 +63,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  z-index: 100;      /* se asegura que quede por encima del fondo */
+  z-index: 100; 
+  
 }
 
 .side-nav a {
@@ -320,7 +321,6 @@ body {
   transform: translateY(0);
 }
     /* Aseguramos que nada tape el menú */
-.side-nav, .hud-madeby { position: absolute; z-index: 10; }
 .hero-illustration { pointer-events: none; z-index: 0; }
 
 /* Menú lateral */
