@@ -53,3 +53,15 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+const animatedItems = document.querySelectorAll('.animate__animated');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animate__fadeInUp'); // podés cambiar el efecto
+    }
+  });
+}, { threshold: 0.2 });
+
+animatedItems.forEach(item => observer.observe(item));
+
