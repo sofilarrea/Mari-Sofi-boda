@@ -389,9 +389,8 @@ body {
 }
 
 .invite-column {
-  align-self: start;   /* 👈 también arriba */
-  position: relative;
-  z-index: 2;
+     position: relative;
+    top: 79%;
 }
 
 .big-number {
@@ -400,9 +399,9 @@ body {
   font-weight: 700;
   font-size: 28vw;
   color: transparent;
-  -webkit-text-stroke: 1px #c3c2c0;
+  -webkit-text-stroke: 1px #072707;
   opacity: 0.15;
-  left: 0;
+  left: 31%;
   bottom: -5%;
   line-height: 1;
   pointer-events: none;
@@ -410,11 +409,6 @@ body {
 }
 
 
-.date-column,
-.invite-column {
-  position: relative;
-  z-index: 2; /* para que queden encima del 7 */
-}
 
 /* subtítulos */
 .section-subtitle {
