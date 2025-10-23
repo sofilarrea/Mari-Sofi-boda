@@ -596,8 +596,8 @@ body {
   gap: 40px;
   align-items: center;
   max-width: 1200px;
-  margin: 100px auto;
-  padding: 0 20px;
+    padding: 0 20px;
+  background-color: #fdfdfd;
 }
 
 /* Collage de fotos */
@@ -649,6 +649,22 @@ body {
   .story-text {
     margin-top: 30px;
   }
+}
+.rsvp-hero {
+  position: absolute;
+  inset: 0;
+  background: url("/assets/images/lago.png") no-repeat right center;
+  background-size: contain;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+
+.rsvp-title {
+  font-size: 6rem;
+  font-weight: 700;
+  color: #224236; /* verde que usás */
+  line-height: 1.2;
 }
 
 
