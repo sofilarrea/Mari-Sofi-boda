@@ -1,66 +1,140 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sofía & Mariana</title>
-  <link rel="stylesheet" href="./css/style2.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;700&family=Pacifico&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script> <!-- Reemplazá "your-kit-code" -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boda Sofía & Nombre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style2.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+   <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 </head>
 <body>
-<header class="topbar">
-  <div class="brand">Sofi & Mari</div>
-  <button class="hamburger" id="hamburger">☰</button>
-</header>
+  <!-- Preloader -->
+<div id="preloader">
+  <div class="spinner"></div>
+</div>
 
-<nav class="sidebar" id="sidebar">
-  <div class="sidebar__nav">
-    <a href="#historia">Historia</a>
-    <a href="#detalles">Detalles</a>
-    <a href="#rsvp">RSVP</a>
-    <a href="#lanzarote">Lanzarote</a>
-  </div>
+<!-- El resto de tu sitio -->
+
+<section class="hero-frame">
+  <!-- ilustración alineada a la derecha (reemplazá por tu playa) -->
+  <div class="hero-illustration" aria-hidden="true"></div>
+<nav class="side-nav">
+  <a class="vlink" href="#rsvp"><span>RSPV</span></a>
+  <a class="vlink" href="#about"><span>ABOUT LANZAROTE</span></a>
+  <a class="vlink" href="#preboda"><span>PRE BODA</span></a>
 </nav>
 
+<div class="hud-madeby vlink"><span>MADE BY SOFI</span></div>
 
-<section class="hero">
-  <div class="hero__left">
-    <h1>¡Nos <span>casamos</span>!</h1>
-    <p>7 de Marzo · Lanzarote</p>
+
+  <!-- Menú hamburguesa (solo mobile) -->
+  <header class="mobile-header">
+    <div class="logo">S / M</div>
+     <button class="hamburger" aria-label="Abrir menú">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+    <nav class="mobile-nav">
+      <a href="#rsvp">RSPV</a>
+      <a href="#about">ABOUT LANZAROTE</a>
+      <a href="#preboda">PRE BODA</a>
+    </nav>
+  </header>
+
+ 
+  <div class="scroll-indicator" aria-hidden="true">
+    <span class="arrow"></span>
   </div>
-  <div class="hero__right">
-    <img src="/assets/images/juntas.jpeg" alt="Sofi y Martín">
+  
+  <!-- Texto central -->
+  <div class="hero-center">
+    <h1 class="hero-title" animate__fadeIn >Nos <br> Casamos <span class="hero-dot">.</span></h1>
+    <!-- <p class="hero-date">15 · Marzo · 2026</p> -->
+  </div>
+</section>
+<section class="date-invite">
+  <div class="big-number">7</div>
+
+  <div class="date-column">
+    <h4 class="section-subtitle">THE DATE</h4>
+    <span class="divider"></span>
+    <h2 class="date-title">
+      Sábado<br>7 de Marzo<br>2026
+    </h2>
+  </div>
+
+  <div class="invite-column">
+    <h4 class="section-subtitle">THE INVITE</h4>
+    <span class="divider"></span>
+    <p class="invite-text">
+       Finca Testeina -   
+       Carretera General de La Geria, LZ-30, Km 13.
+          C.P. 35575. Masdache (Tías). Lanzarote | Las Palmas
+    </p>
+    <a href="#" class="invite-link">RSVP</a>
+  </div>
+</section>
+<section class="timeline-section">
+  <h3 class="section-subtitle">Our Story</h3>
+  <h2 class="story-title">Nuestra historia</h2>
+
+  <div class="timeline">
+    <!-- Item 1 -->
+    <div class="timeline-item left">
+      <figure>
+        <img src="/assets/images/sofi-chiquita.jpeg" alt="Sofi de niña">
+      </figure>
+      <p class="history-text">
+       Segunda de dos hermanos, con una mezcla explosiva de raíces irlandesas y españolas, y una paleta de pádel que parece extensión de su brazo. Desde chica, su pasión por los demás se coló en cada rincón de su personalidad, combinando un carácter sensible con una dosis justa de picardía. Capaz de emocionarse con un gesto amable… y de pelear cada punto en la cancha como si fuera una final mundial.
+      </p>
+    </div>
+
+    <!-- Item 2 -->
+    <div class="timeline-item right">
+      <figure>
+        <img src="/assets/images/mari-niña.jpeg" alt="Primeros años juntos">
+      </figure>
+      <p class="history-text">
+        Oriunda de Mendoza, Argentina, la segunda de cinco hermanos, Mari siempre se destacó. Cuenta la leyenda que a HORAS de nacida ya levantaba curiosa su cabeza, anécdota que nunca sabremos si es cierta, lo que sí podemos afirmar es su temperamento especial que hace que sea única, dicen los dichos que es debido a la alta tolerancia a bromas de su particular hermano mayor.
+      </p>
+    </div>
+
+    <!-- Item 3 -->
+    <div class="timeline-item left">
+      <figure>
+        <img src="/assets/images/viaje.jpeg" alt="Viaje juntos">
+      </figure>
+      <p class="history-text">
+        Juntos recorrieron caminos, viajaron, soñaron… y entendieron que el mejor viaje era el que empezaban a compartir.
+      </p>
+    </div>
   </div>
 </section>
 
 
-<section class="historia">
-  <h2>Nuestra historia</h2>
-  <div class="historia__grid">
-    <div class="historia__item">
-      <h4>España</h4>
-      <h3>Sofi</h3>
-      <img src="/assets/images/sofi-chiquita.jpeg" alt="Foto Sofi">
-      <p>
-        Segunda de dos hermanos, con una mezcla explosiva de raíces irlandesas y españolas, y una paleta de pádel que parece extensión de su brazo. Desde chica, su pasión por los demás se coló en cada rincón de su personalidad, combinando un carácter sensible con una dosis justa de picardía. Capaz de emocionarse con un gesto amable… y de pelear cada punto en la cancha como si fuera una final mundial.
-      </p>
-    </div>
-    <div class="historia__item">
-      <h4>Argentina</h4>
-      <h3>Mari</h3>
-      <img src="/assets/images/mari-niña.jpeg" alt="Foto Mari">
-      <p>
-       Oriunda de Mendoza, Argentina, la segunda de cinco hermanos, Mari siempre se destacó. Cuenta la leyenda que a HORAS de nacida ya levantaba curiosa su cabeza, anécdota que nunca sabremos si es cierta, lo que sí podemos afirmar es su temperamento especial que hace que sea única, dicen los dichos que es debido a la alta tolerancia a bromas de su particular hermano mayor.
-      </p>
-    </div>
-  </div>
-</section>
 
-
-
-
-      
 <script src="/main.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollSmoother.min.js"></script>
+
+<script>
+  gsap.registerPlugin(ScrollSmoother);
+
+  ScrollSmoother.create({
+    wrapper: "#smooth-wrapper",
+    content: "#smooth-content",
+    smooth: 1.5,   // cuanto más alto, más inercia
+    effects: true
+  });
+</script>
+
 </body>
 </html>
