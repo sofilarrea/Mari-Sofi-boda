@@ -62,7 +62,7 @@ html {
 }
 
 /* Menú vertical izquierdo */
-/* Menú lateral */
+/* Menú lateral con estilo vertical */
 .side-nav {
   position: absolute;
   left: 30px;
@@ -70,18 +70,58 @@ html {
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  gap: 30px; /* espacio entre links */
+  gap: 40px; /* espacio entre items */
 }
 
 .side-nav a {
-  font-size: 13px;
-  letter-spacing: 0.15em;
-  text-decoration: none;
-  color: #224236;
+  writing-mode: vertical-rl;    /* texto vertical */
+  transform: rotate(180deg);    /* lectura de abajo hacia arriba */
+  font-size: 12px;
+  font-family: 'Inter', sans-serif;
   font-weight: 400;
-  display: inline-block;
+  letter-spacing: 0.2em;
+  color: #224236;
+  opacity: 0.7;
+  text-decoration: none;
   text-transform: uppercase;
 }
+
+/* Marca inferior */
+.hud-madeby {
+  position: absolute;
+  left: 30px;
+  bottom: 120px;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 12px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  color: #224236;
+  opacity: 0.7;
+  text-transform: uppercase;
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  left: 30px;
+  bottom: 40px;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(34,66,54,.4);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+.scroll-indicator .arrow {
+  width: 0; height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid #224236;
+}
+
 
 /* Ubicación */
 .hud-location {
@@ -257,4 +297,54 @@ html {
 .mobile-nav.active {
   transform: translateY(0);
 }
-    
+    /* Aseguramos que nada tape el menú */
+.side-nav, .hud-madeby { position: absolute; z-index: 10; }
+.hero-illustration { pointer-events: none; z-index: 0; }
+
+/* Menú lateral */
+.side-nav{
+  left: 30px; top: 50%;
+  transform: translateY(-50%);
+  display: flex; flex-direction: column;
+  gap: 40px;
+}
+
+/* Marca inferior */
+.hud-madeby{ left: 30px; bottom: 120px; }
+
+/* Ítem vertical con subrayado animado */
+.vlink{
+  position: relative; display: inline-block; text-decoration: none;
+}
+.vlink > span{
+  position: relative; display: inline-block;
+  /* writing-mode: vertical-rl; transform: rotate(180deg); */
+  font: 400 12px/1 "Inter", system-ui, sans-serif;
+  letter-spacing: .2em; text-transform: uppercase;
+  color: #224236; opacity: .75;
+  transition: color .25s ease, opacity .25s ease;
+}
+
+/* “Underline” (línea horizontal) centrada, animación por scaleX */
+.vlink > span::after{
+  content: "";
+  position: absolute;
+  left: 50%; transform: translateX(-50%) scaleX(0);
+  bottom: -8px;                 /* distancia al texto */
+  width: 22px; height: 2px;     /* tamaño de la línea */
+  background: #123026;          /* verde más oscuro */
+  border-radius: 1px;
+  transition: transform .28s ease, opacity .28s ease;
+  opacity: 0;
+}
+
+/* Hover/focus: texto más oscuro + subrayado visible */
+.vlink:hover > span,
+.vlink:focus-visible > span{
+  color: #123026; opacity: 1;
+}
+.vlink:hover > span::after,
+.vlink:focus-visible > span::after{
+  transform: translateX(-50%) scaleX(1);
+  opacity: 1;
+}
