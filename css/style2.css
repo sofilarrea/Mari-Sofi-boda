@@ -1,0 +1,260 @@
+:root{
+  --bg:#faf9f7;          /* blanco roto */
+  --ink:#224236;         /* verde oscuro elegante */
+  --muted:#a3b1a9;       /* gris verdoso claro para líneas/dibujo */
+  --edge-pad:24px;
+}
+
+/* Reset mínimo */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0; background:var(--bg); color:var(--ink); font-family:"Inter",system-ui,Arial,sans-serif}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+/* ===== TEXTO CENTRAL ===== */
+.hero-center{
+  position:relative;
+  display:grid;
+  place-items:center;
+  min-height:100vh;
+  text-align:center;
+  padding: 8vh 6vw;
+}
+
+.hero-title{
+  font-family:"Cormorant Garamond", serif;
+  font-weight:700;
+  font-size:clamp(48px, 9vw, 128px);
+  line-height:.95;
+  margin:0;
+  letter-spacing:.5px;
+}
+.hero-dot{ /* punto final grande, opcional */
+  font-weight:700;
+}
+
+/* ===== BORDE / MARCOS FINOS (opcional) ===== */
+.hero-frame::before,
+.hero-frame::after{
+  content:"";
+  position:absolute; inset:0;
+  border:1px solid rgba(34,66,54,.22);
+  pointer-events:none;
+}
+
+/* ===== HUD / ELEMENTOS PERIFÉRICOS ===== */
+
+/* Iniciales arriba-izquierda */
+.hud-initials{
+  position:absolute; top:var(--edge-pad); left:var(--edge-pad);
+  font-weight:500; line-height:1.2; letter-spacing:.08em;
+}
+
+/* Contador arriba-derecha */
+.hud-pages{
+  position:absolute; top:var(--edge-pad); right:var(--edge-pad);
+  text-align:right; letter-spacing:.08em;
+}
+
+/* Menú vertical izquierdo */
+/* Menú lateral */
+.side-nav {
+  position: absolute;
+  left: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* espacio entre links */
+}
+
+.side-nav a {
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  color: #224236;
+  font-weight: 400;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+/* Ubicación */
+.hud-location {
+  position: absolute;
+  left: 30px;
+  bottom: 120px;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  color: #224236;
+  opacity: 0.8;
+}
+
+/* Indicador scroll */
+.scroll-indicator {
+  position: absolute;
+  left: 30px;
+  bottom: 40px;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(34,66,54,.4);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scroll-indicator .arrow {
+  width: 0; height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid #224236;
+}
+
+
+/* “SCROLL DOWN” abajo-derecha */
+.hud-scroll{
+  position:absolute; right:var(--edge-pad); bottom:var(--edge-pad);
+  font-size:12px; letter-spacing:.18em; opacity:.7;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 960px){
+  .side-nav{ display:none; }
+  .hud-location{ display:none; }
+  .hud-initials, .hud-pages{ font-size:12px }
+  .hero-title{ font-size:clamp(40px, 12vw, 88px) }
+}
+.hero-frame {
+  position: relative;
+  min-height: 100vh;
+  background: #fdfdfd;
+  overflow: hidden;
+}
+
+/* Imagen de fondo (alineada a la derecha) */
+.hero-illustration {
+  position: absolute;
+  inset: 0;
+  background: url("/assets/images/lago.png") no-repeat right center;
+  background-size: contain;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+/* Contenido */
+.hero-center {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* ✨ alineamos el texto con el comienzo de la imagen */
+  align-items: flex-start;
+  padding-left: 45%; /* ajusta este valor hasta que quede alineado */
+  text-align: left;
+  z-index: 2;
+}
+
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(48px, 8vw, 120px);
+  font-weight: 700;
+  margin: 0 0 20px;
+  color: #224236;
+}
+
+.hero-dot {
+  color: #224236;
+}
+
+.hero-date,
+.hero-location {
+  font-size: clamp(16px, 2vw, 24px);
+  margin: 5px 0;
+  opacity: 0.8;
+  color: #224236;
+}
+/* Header */
+.mobile-header {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  background: transparent;
+}
+
+/* Logo */
+.logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  color: #224236;
+}
+
+/* Hamburguesa */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 28px;
+  height: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 2px;
+  background: #224236;
+  transition: 0.3s ease;
+}
+
+/* Estado cruz */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* Menú mobile */
+.mobile-nav {
+  position: fixed;
+  inset: 0;
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  transform: translateY(-100%);
+  transition: transform 0.4s ease;
+}
+
+.mobile-nav a {
+  font-size: 22px;
+  text-decoration: none;
+  color: #224236;
+  letter-spacing: 0.1em;
+}
+
+.mobile-nav.active {
+  transform: translateY(0);
+}
+    
