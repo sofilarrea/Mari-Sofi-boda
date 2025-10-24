@@ -180,12 +180,15 @@ Distinguida en sus estudios, se recibió con notas excelentes y realizó su resi
   <label for="email">Email</label>
   <input type="email" name="email" id="email" required>
 
-  <!-- Asistencia -->
-  <label>¿Asistirás a la boda?</label>
-  <div class="inline-options">
-    <label><input type="radio" name="asistira" value="Sí" required> Sí</label>
-    <label><input type="radio" name="asistira" value="No" required> No</label>
-  </div>
+ <!-- Asistencia -->
+<label>¿Asistirás a la boda?</label>
+<div class="inline-options">
+  <label><input type="radio" name="asistira" value="Sí" required> Sí</label>
+  <label><input type="radio" name="asistira" value="No" required> No</label>
+</div>
+
+<!-- Contenedor de extras (se oculta si eligen No) -->
+<div id="boda-extra" style="display:none;">
 
   <!-- Personas -->
   <label for="cantidad_personas">¿Cuántas personas asistirán?</label>
@@ -221,6 +224,9 @@ Distinguida en sus estudios, se recibió con notas excelentes y realizó su resi
   <div id="restricciones-text" style="display:none;">
     <input type="text" name="restricciones" placeholder="Especificar (ej: celíaco, vegetariano, vegano...)">
   </div>
+
+</div>
+
 
   <!-- ===== Sección Pre-boda ===== -->
   <h4 class="form-subtitle">Evento Pre-boda</h4>

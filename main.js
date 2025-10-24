@@ -87,3 +87,37 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const radiosAsist = document.querySelectorAll("input[name='asistira']");
+  const bodaExtra   = document.getElementById("boda-extra");
+  const restrRadios = document.querySelectorAll("input[name='restricciones_toggle']");
+  const restrText   = document.getElementById("restricciones-text");
+
+  // Mostrar / ocultar sección extra según asistencia
+  radiosAsist.forEach(radio => {
+    radio.addEventListener("change", () => {
+      if (radio.value === "Sí" && radio.checked) {
+        bodaExtra.style.display = "block";
+      } else {
+        bodaExtra.style.display = "none";
+        // limpiar subcampos si dice No
+        bodaExtra.querySelectorAll("input, select").forEach(el => {
+          if (el.type === "radio" || el.type === "checkbox") el.checked = false;
+          if (el.tagName === "SELECT") el.value = "";
+          if (el.type === "text") el.value = "";
+        });
+        restrText.style.display = "none";
+      }
+    });
+  });
+
+  // Restricciones alimentarias toggle
+  restrRadios.forEach(radio => {
+    radio.addEventListener("change", () => {
+      restrText.style.display = (radio.value === "Sí" && radio.checked) ? "block" : "none";
+      if (radio.value === "No" && radio.checked) {
+        restrText.querySelector("input").value = "";
+      }
+    });
+  });
+});
