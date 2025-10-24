@@ -1075,6 +1075,7 @@ body {
 
 
 
+
 /* En mobile (ej: <=900px) lo ocultamos */
 @media (max-width: 900px) {
   .side-nav,
