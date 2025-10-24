@@ -471,9 +471,7 @@ body {
     bottom: 5%;
     transform: translateX(-50%);
   }
-  .divider {
-    margin: 0 auto 20px;
-  }
+ 
 }
 
 /* === PRELOADER === */
@@ -704,7 +702,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url('/assets/images/fondo-hero.png') no-repeat center center;
+ background-color: #fdfdfd;
   background-size: cover;
 }
 
@@ -712,7 +710,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(255,255,255,0.9); /* overlay delicado */
+ ; /* overlay delicado */
 }
 
 .rsvp-content {
@@ -886,6 +884,98 @@ body {
   cursor: pointer;
 }
 
+.info-section {
+  padding: 6rem 2rem;
+  background: #fdfdfd;
+}
+
+.info-container {
+  display: flex;   
+  flex-direction: column;        /* ya no grid rígido */
+  justify-content: space-between;
+  align-items: flex-start; /* deja que cada bloque tenga altura propia */
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.info-block {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.info-label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 1rem;
+  border-top: 1px solid #ccc;
+  padding-top: 0.5rem;
+}
+
+.info-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #223322;
+}
+
+.info-link {
+  font-size: 1rem;
+  text-decoration: underline;
+  color: #223322;
+}
+
+.info-text {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #555;
+  max-width: 280px; /* para que no se estire mucho */
+}
+.bank-block { 
+  max-width: 980px;
+  margin: 3rem auto;
+  color: #203b33; /* verde oscuro como tu site */
+  font-family: system-ui, -apple-system, "Helvetica Neue", Arial;
+}
+.bank-row {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:1rem;
+  padding: .9rem 0;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+.bank-row--compact { padding-top: .8rem; border-bottom: none; }
+.bank-info { flex: 1 1 auto; }
+.bank-name { font-weight:700; margin-bottom:.15rem; }
+.bank-sub { color: #6b7a73; font-size:.95rem; margin-bottom:.4rem; }
+.bank-cbu { font-family: "Courier New", monospace; color:#0b2e26; font-weight:600; }
+.cbu-val { letter-spacing: .04em; }
+
+.btn-copy, .btn-copy-all {
+  background: transparent;
+  border: 1px solid rgba(32,59,51,0.12);
+  padding: .5rem .9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #203b33;
+  font-weight:600;
+  transition: all .18s ease;
+}
+.btn-copy:hover, .btn-copy-all:hover { transform: translateY(-2px); box-shadow: 0 6px 14px rgba(32,59,51,0.06); }
+
+.bank-status {
+  margin-left: 1rem;
+  color: #0a7d32;
+  font-size: .95rem;
+  min-width: 180px;
+  text-align: left;
+}
 
 
 
@@ -930,11 +1020,7 @@ body {
     text-align: center;
   }
 
-  /* La línea se centra */
-  .divider {
-    margin: 0 auto 20px;
-  }
-  
+
 .photo-main img{
   max-width: 200px;
 
@@ -952,5 +1038,12 @@ h3.section-subtitle {
 .photo-overlay img{
 max-width: 200px;
   
+}
+.info-container {
+  display: flex;           /* ya no grid rígido */
+  flex-direction: column;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 }
