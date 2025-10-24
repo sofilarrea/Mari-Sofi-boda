@@ -24,9 +24,9 @@
   <!-- ilustración alineada a la derecha (reemplazá por tu playa) -->
   <div class="hero-illustration" aria-hidden="true"></div>
 <nav class="side-nav">
-  <a class="vlink" href="#rsvp"><span>RSPV</span></a>
+  <a class="vlink" href="index.html#rsvp"><span>RSPV</span></a>
   <a class="vlink" href="lanzarote.html"><span>ABOUT LANZAROTE</span></a>
-  <a class="vlink" href="#preboda"><span>PRE BODA</span></a>
+  <a class="vlink" href="lanzarote.html#preboda"><span>PRE BODA</span></a>
 </nav>
 
 <div class="hud-madeby vlink"><span>MADE BY SOFI</span></div>
@@ -41,9 +41,9 @@
     <span></span>
   </button>
     <nav class="mobile-nav">
-      <a href="#rsvp">RSPV</a>
-      <a href="#about">ABOUT LANZAROTE</a>
-      <a href="#preboda">PRE BODA</a>
+      <a href="index.html#rsvp">RSPV</a>
+      <a href="lanzarote.html">ABOUT LANZAROTE</a>
+      <a href="lanzarote.html#preboda">PRE BODA</a>
     </nav>
   </header>
 
@@ -78,7 +78,7 @@
        Carretera General de La Geria, LZ-30, Km 13.
           C.P. 35575. Masdache (Tías). Lanzarote | Las Palmas
     </p>
-    <a href="#" class="invite-link">RSVP</a>
+    <a href="index.html#rspv" class="invite-link">RSVP</a>
   </div>
 </section>
 <section class="timeline-section">
@@ -122,7 +122,7 @@
     <!-- Item 2 -->
     <div class="timeline-item right">
       <figure>
-        <img src="/assets/images//can-surgeon.jpg" alt="Primeros años juntos">
+        <img src="/assets/images/can-surgeon.jpg" alt="Primeros años juntos">
       </figure>
       <p class="history-text">
 Distinguida en sus estudios, se recibió con notas excelentes y realizó su residencia en el hospital más importante, especializándose nada menos que en neurocirugía pediátrica. Todo parecía seguir un camino perfecto… hasta que por un cortocircuito mental fuerte decidió dejar todo e irse para España      </p>
@@ -166,70 +166,67 @@ Distinguida en sus estudios, se recibió con notas excelentes y realizó su resi
 <section id="rsvp" class="rsvp-section">
   <div class="rsvp-content">
   
+<form id="rsvp-form" class="rsvp-form">
 
-    <form id="rsvp-form">
+  <!-- Nombre -->
+  <label for="name">Nombre</label>
+  <input type="text" name="name" id="name" required>
 
-      <!-- Nombre -->
-      <label for="name">Nombre</label>
-      <input type="text" name="name" id="name" required>
+  <!-- Teléfono -->
+  <label for="phone">Teléfono</label>
+  <input type="text" name="phone" id="phone" required>
 
-      <!-- Teléfono -->
-      <label for="phone">Teléfono</label>
-      <input type="text" name="phone" id="phone" required>
+  <!-- Email -->
+  <label for="email">Email</label>
+  <input type="email" name="email" id="email" required>
 
-      <!-- Email -->
-      <label for="email">Email</label>
-      <input type="email" name="email" id="email" required>
+  <!-- Asistencia -->
+  <label>¿Asistirás a la boda?</label>
+  <div class="inline-options">
+    <label><input type="radio" name="asistira" value="Sí" required> Sí</label>
+    <label><input type="radio" name="asistira" value="No" required> No</label>
+  </div>
 
-      <!-- Asistencia -->
-      <label>¿Asistirás a la boda?</label>
-      <div class="inline-options">
-        <label><input type="radio" name="asistira" value="Sí" required> Sí</label>
-        <label><input type="radio" name="asistira" value="No" required> No</label>
-      </div>
+  <!-- Personas -->
+  <label for="cantidad_personas">¿Cuántas personas asistirán?</label>
+  <select name="cantidad_personas" id="cantidad_personas">
+    <option value="">Selecciona...</option>
+    <option value="1">1 persona</option>
+    <option value="2">2 personas</option>
+    <option value="3">3 personas</option>
+    <option value="4">4 personas</option>
+  </select>
 
-      <!-- Personas -->
-      <label for="cantidad_personas">¿Cuántas personas asistirán?</label>
-      <select name="cantidad_personas" id="cantidad_personas">
-        <option value="">Selecciona...</option>
-        <option value="1">1 persona</option>
-        <option value="2">2 personas</option>
-        <option value="3">3 personas</option>
-        <option value="4">4 personas</option>
-      </select>
+  <!-- Niños -->
+  <label>¿Lleva niños?</label>
+  <div class="inline-options">
+    <label><input type="radio" name="lleva_ninos" value="Sí"> Sí</label>
+    <label><input type="radio" name="lleva_ninos" value="No"> No</label>
+  </div>
 
-      <!-- Niños -->
-      <label>¿Lleva niños?</label>
-      <div class="inline-options">
-        <label><input type="radio" name="lleva_ninos" value="Sí"> Sí</label>
-        <label><input type="radio" name="lleva_ninos" value="No"> No</label>
-      </div>
+  <!-- Transporte -->
+  <label>¿Necesitarás transporte el día de la boda?</label>
+  <div class="inline-options">
+    <label><input type="radio" name="transporte" value="Sí"> Sí</label>
+    <label><input type="radio" name="transporte" value="No"> No</label>
+  </div>
 
-      <!-- Transporte -->
-      <label>¿Necesitarás transporte el día de la boda?</label>
-      <div class="inline-options">
-        <label><input type="radio" name="transporte" value="Sí"> Sí</label>
-        <label><input type="radio" name="transporte" value="No"> No</label>
-      </div>
+  <!-- Restricciones alimentarias -->
+  <label>¿Tenés restricciones alimentarias?</label>
+  <div class="inline-options">
+    <label><input type="radio" name="restricciones_toggle" value="Sí"> Sí</label>
+    <label><input type="radio" name="restricciones_toggle" value="No"> No</label>
+  </div>
 
-      <!-- Restricciones alimentarias -->
-      <!-- <label>¿Tenés restricciones alimentarias?</label>
-      <div class="inline-options">
-        <label><input type="radio" name="restricciones_toggle" value="Sí"> Sí</label>
-        <label><input type="radio" name="restricciones_toggle" value="No"> No</label>
-      </div>
+  <div id="restricciones-text" style="display:none;">
+    <input type="text" name="restricciones" placeholder="Especificar (ej: celíaco, vegetariano, vegano...)">
+  </div>
 
-      <div id="diet-options">
-        <label><input type="checkbox" name="restricciones[]" value="celiaco"> Celíaco/a / Sin gluten</label>
-        <label><input type="checkbox" name="restricciones[]" value="vegetariano"> Vegetariano/a</label>
-        <label><input type="checkbox" name="restricciones[]" value="vegano"> Vegano/a</label>
-        <label><input type="checkbox" id="diet-otros" value="otros"> Otros</label>
-        <input type="text" id="diet-otros-text" name="otros" placeholder="Especificar" hidden>
-      </div> -->
+  <!-- Botón -->
+  <button type="submit" class="btn-submit">Enviar confirmación</button>
+  <p id="form-status" aria-live="polite"></p>
+</form>
 
-      <!-- Botón -->
-      <button type="submit" class="btn-submit">Enviar confirmación</button>
-    </form>
   </div>
 </section>
 

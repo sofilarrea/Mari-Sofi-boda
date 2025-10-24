@@ -53,15 +53,18 @@ window.addEventListener("scroll", () => {
     }
   });
 });
-const animatedItems = document.querySelectorAll('.animate__animated');
+document.addEventListener("DOMContentLoaded", () => {
+  const restrRadios = document.querySelectorAll("input[name='restricciones_toggle']");
+  const restrText   = document.getElementById("restricciones-text");
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('animate__fadeInUp'); // podés cambiar el efecto
-    }
+  restrRadios.forEach(radio => {
+    radio.addEventListener("change", () => {
+      if (radio.value === "Sí" && radio.checked) {
+        restrText.style.display = "block";
+      } else {
+        restrText.style.display = "none";
+        restrText.querySelector("input").value = "";
+      }
+    });
   });
-}, { threshold: 0.2 });
-
-animatedItems.forEach(item => observer.observe(item));
-
+});

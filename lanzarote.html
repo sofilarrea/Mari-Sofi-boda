@@ -24,9 +24,9 @@
   <!-- ilustración alineada a la derecha (reemplazá por tu playa) -->
   <div class="hero-illustration" aria-hidden="true"></div>
 <nav class="side-nav">
-  <a class="vlink" href="#rsvp"><span>RSPV</span></a>
-  <a class="vlink" href="#about"><span>ABOUT LANZAROTE</span></a>
-  <a class="vlink" href="#preboda"><span>PRE BODA</span></a>
+  <a class="vlink" href="index.html#rsvp"><span>RSPV</span></a>
+  <a class="vlink" href="lanzarote.html"><span>ABOUT LANZAROTE</span></a>
+  <a class="vlink" href="lanzarote.html#preboda"><span>PRE BODA</span></a>
 </nav>
 
 <div class="hud-madeby vlink"><span>MADE BY SOFI</span></div>
@@ -43,7 +43,7 @@
     <nav class="mobile-nav">
       <a href="index.html#rsvp">RSPV</a>
       <a href="lanzarote.html">ABOUT LANZAROTE</a>
-      <a href="#preboda">PRE BODA</a>
+      <a href="lanzarote.html#preboda">PRE BODA</a>
     </nav>
   </header>
 
@@ -54,28 +54,12 @@
   
   <!-- Texto central -->
   <div class="hero-center">
-<h1 class="hero-title animate__animated animate__bounce animate__delay-2s">About <br> Lanzarote<span class="hero-dot">.</span></h1>
+<h1 class="hero-title animate__animated animate__bounce animate__delay-2s">Sunset <br></h1>
 
     <!-- <p class="hero-date">15 · Marzo · 2026</p> -->
   </div>
 </section>
-<section class="story-grid-section">
-  <div class="photo-collage">
-    <img src="/assets/images/Diseño sin título (3).png" alt="Foto 1">
-    <img src="/assets/images/Diseño sin título (4).png" alt="Foto 2">
-    <img src="/assets/images/WhatsApp Image 2025-08-06 at 13.53.52.jpeg" alt="Foto 3">
-    <img src="/assets/images/juntas3.jpeg" alt="Foto 4">
-  
-  </div>
 
-  <div class="story-text">
- <h4 class="section-subtitle">NOSOTRAS</h4>
-    <span class="divider"></span>
-    <p>
-     Y así fue como, gracias al pádel (y también a Rachel), lograron encontrarse. Tras una primera cita con cena incluida, llegó el turno de “solo un capítulo” de Merlina (Miércoles en España) … que terminó siendo una maratón de risas, charlas y miradas cómplices. Desde ese momento, ya no hubo segundas citas: hubo nuestras citas , porque nunca más se separaron.
-    </p>
-  </div>
-</section>
 <section class="date-invite" id="invite">
   <!-- <div class="big-number">7</div> -->
 
@@ -97,10 +81,38 @@ SportClub Puerto Calero - C. Princesa Guayarmina, 1A, 35571 Puerto Calero, Las P
     
     <a href="#" class="invite-link">RSVP</a>
   </div>
-  <div>
+  <!-- <div>
     <p>
       Queremos arrancar la celebración de una forma distinta y muy nuestra. Como todos saben, el pádel es una de nuestras grandes pasiones, así que antes del gran día los invitamos a sumarse a un partido lleno de risas, buena onda y energía. Será la excusa perfecta para calentar motores, compartir un momento diferente y empezar a festejar juntos esta aventura
     </p>
+  </div> -->
+</section>
+
+<section class="story-grid-section">
+  <div class="photo-collage">
+        <img src="/assets/images/WhatsApp Image 2025-10-23 at 19.09.11.jpeg" alt="Foto 3">
+
+    <img src="/assets/images/WhatsApp Image 2025-10-23 at 19.09.10.jpeg" alt="Foto 1">
+    <img src="/assets/images/palm.jpeg" alt="Foto 2">
+    <img src="/assets/images/WhatsApp Image 2025-10-23 at 19.09.15.jpeg" alt="Foto 4">
+  
+  </div>
+
+  <div class="story-text">
+ <h4 class="section-subtitle">LANZAROTE</h4>
+    <span class="divider"></span>
+    <p>
+
+
+Lanzarote es una isla mágica del archipiélago canario, reconocida por sus paisajes volcánicos únicos que parecen de otro planeta. Sus campos de lava negra, contrastados con playas de arena dorada y aguas turquesa, crean un entorno de gran belleza natural. Además de su clima cálido durante todo el año, la isla ofrece una combinación perfecta entre naturaleza, arte y cultura gracias a la influencia del artista César Manrique, quien integró la arquitectura con el entorno volcánico. Lanzarote es un lugar que invita tanto al descanso como a la aventura, con rutas de senderismo, bodegas en terrenos de lava y atardeceres inolvidables frente al mar.
+    </p>
+  </div>
+</section>
+<section class="weather">
+  <div class="weather-box">
+    <p id="weather-temp">24°C</p>
+    <p id="weather-desc">Soleado</p>
+    <p class="weather-city">Lanzarote</p>
   </div>
 </section>
 
@@ -119,75 +131,6 @@ SportClub Puerto Calero - C. Princesa Guayarmina, 1A, 35571 Puerto Calero, Las P
     
   </div>
   
-</section>
-<section id="rsvp" class="rsvp-section">
-  <div class="rsvp-content">
-  
-
-    <form id="rsvp-form">
-
-      <!-- Nombre -->
-      <label for="name">Nombre</label>
-      <input type="text" name="name" id="name" required>
-
-      <!-- Teléfono -->
-      <label for="phone">Teléfono</label>
-      <input type="text" name="phone" id="phone" required>
-
-      <!-- Email -->
-      <label for="email">Email</label>
-      <input type="email" name="email" id="email" required>
-
-      <!-- Asistencia -->
-      <label>¿Asistirás a la boda?</label>
-      <div class="inline-options">
-        <label><input type="radio" name="asistira" value="Sí" required> Sí</label>
-        <label><input type="radio" name="asistira" value="No" required> No</label>
-      </div>
-
-      <!-- Personas -->
-      <label for="cantidad_personas">¿Cuántas personas asistirán?</label>
-      <select name="cantidad_personas" id="cantidad_personas">
-        <option value="">Selecciona...</option>
-        <option value="1">1 persona</option>
-        <option value="2">2 personas</option>
-        <option value="3">3 personas</option>
-        <option value="4">4 personas</option>
-      </select>
-
-      <!-- Niños -->
-      <label>¿Lleva niños?</label>
-      <div class="inline-options">
-        <label><input type="radio" name="lleva_ninos" value="Sí"> Sí</label>
-        <label><input type="radio" name="lleva_ninos" value="No"> No</label>
-      </div>
-
-      <!-- Transporte -->
-      <label>¿Necesitarás transporte el día de la boda?</label>
-      <div class="inline-options">
-        <label><input type="radio" name="transporte" value="Sí"> Sí</label>
-        <label><input type="radio" name="transporte" value="No"> No</label>
-      </div>
-
-      <!-- Restricciones alimentarias -->
-      <!-- <label>¿Tenés restricciones alimentarias?</label>
-      <div class="inline-options">
-        <label><input type="radio" name="restricciones_toggle" value="Sí"> Sí</label>
-        <label><input type="radio" name="restricciones_toggle" value="No"> No</label>
-      </div>
-
-      <div id="diet-options">
-        <label><input type="checkbox" name="restricciones[]" value="celiaco"> Celíaco/a / Sin gluten</label>
-        <label><input type="checkbox" name="restricciones[]" value="vegetariano"> Vegetariano/a</label>
-        <label><input type="checkbox" name="restricciones[]" value="vegano"> Vegano/a</label>
-        <label><input type="checkbox" id="diet-otros" value="otros"> Otros</label>
-        <input type="text" id="diet-otros-text" name="otros" placeholder="Especificar" hidden>
-      </div> -->
-
-      <!-- Botón -->
-      <button type="submit" class="btn-submit">Enviar confirmación</button>
-    </form>
-  </div>
 </section>
 
 

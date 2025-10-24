@@ -17,9 +17,7 @@ html {
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: #fafafa url("/assets/images/fondo-playa.svg") no-repeat center top;
-  background-attachment: fixed;   /* clave: el fondo se queda fijo */
-  background-size: cover;        /* o "contain" si es un patrón */
+ 
   scroll-behavior: smooth;       /* scroll nativo suave */
 }
 
@@ -820,10 +818,76 @@ body {
   }
 }
 
-.fade-up {
-  opacity: 0;
-  animation: fadeInUp 1s cubic-bezier(.22,.61,.36,1) forwards;
+.weather {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: #f9f9f9;
+  font-family: 'Georgia', serif;
+  color: #1e3a34;
 }
+
+.weather-box p {
+  margin: 0.5rem 0;
+}
+
+#weather-temp {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+#weather-desc {
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+.weather-city {
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+  color: #6b7a75;
+}
+
+.rsvp-section {
+ 
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.form-title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-subtitle {
+  font-size: 1.2rem;
+  margin: 2rem 0 0.5rem;
+  font-weight: 600;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.3rem;
+}
+
+.inline-options {
+  display: flex;
+  gap: 1rem;
+  margin: 0.5rem 0 1.5rem;
+}
+
+.btn-submit {
+  display: block;
+  margin: 2rem auto 0;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  background: #1e3a34;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+
 
 
 
