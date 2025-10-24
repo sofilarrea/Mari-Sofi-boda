@@ -418,13 +418,13 @@ body {
   text-transform: uppercase;
 }
 
-.divider {
+/* .divider {
   display: block;
   width: 40px;
   height: 2px;
   background: #ccc;
   margin-bottom: 24px;
-}
+} */
 
 /* fecha */
 .date-title {
@@ -917,17 +917,7 @@ body {
   
 }
 
-/* Responsive: en móvil se apilan */
-@media (max-width: 768px) {
-  .info-grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-  }
-  .regalos, .argentina, .espana {
-    grid-column: 1;
-    text-align: left;
-  }
-}
+
 .footer-minimal {
   background: #fff;          /* fondo blanco */
   padding: 1.5rem 0;
@@ -1021,4 +1011,12 @@ max-width: 200px;
   max-width: 1200px;
   margin: 0 auto;
 }
+.info-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .regalos, .argentina, .espana {
+    grid-column: 1;
+    text-align: left;
+  }
 }
