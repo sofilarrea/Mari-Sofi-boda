@@ -68,3 +68,27 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const restrRadios = document.querySelectorAll("input[name='restricciones_toggle']");
+  const restrText   = document.getElementById("restricciones-text");
+
+  restrRadios.forEach(radio => {
+    radio.addEventListener("change", () => {
+      restrText.style.display = (radio.value === "Sí") ? "block" : "none";
+    });
+  });
+
+  const partidoRadios = document.querySelectorAll("input[name='ira_partido']");
+  const eventoExtra   = document.getElementById("evento-extra");
+
+  partidoRadios.forEach(radio => {
+    radio.addEventListener("change", () => {
+      if (radio.value === "No" && radio.checked) {
+        eventoExtra.style.display = "block";
+      } else {
+        eventoExtra.style.display = "none";
+        eventoExtra.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
+      }
+    });
+  });
+});

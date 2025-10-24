@@ -222,6 +222,25 @@ Distinguida en sus estudios, se recibió con notas excelentes y realizó su resi
     <input type="text" name="restricciones" placeholder="Especificar (ej: celíaco, vegetariano, vegano...)">
   </div>
 
+  <!-- ===== Sección Pre-boda ===== -->
+  <h4 class="form-subtitle">Evento Pre-boda</h4>
+
+  <!-- Partido de pádel -->
+  <label>¿Irás al partido de pádel?</label>
+  <div class="inline-options">
+    <label><input type="radio" name="ira_partido" value="Sí" required> Sí</label>
+    <label><input type="radio" name="ira_partido" value="No" required> No</label>
+  </div>
+
+  <!-- Evento extra si responde No -->
+  <div id="evento-extra" style="display:none;">
+    <label>¿Irás de todas formas a disfrutar el día con nosotras?</label>
+    <div class="inline-options">
+      <label><input type="radio" name="ira_evento" value="Sí"> Sí</label>
+      <label><input type="radio" name="ira_evento" value="No"> No</label>
+    </div>
+  </div>
+
   <!-- Botón -->
   <button type="submit" class="btn-submit">Enviar confirmación</button>
   <p id="form-status" aria-live="polite"></p>
