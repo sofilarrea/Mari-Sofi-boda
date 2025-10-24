@@ -1,5 +1,5 @@
 :root{
-  --bg:#faf9f7;          /* blanco roto */
+  --bg:#fdfdfd;          /* blanco roto */
   --ink:#224236;         /* verde oscuro elegante */
   --muted:#a3b1a9;       /* gris verdoso claro para líneas/dibujo */
   --edge-pad:24px;
@@ -1030,7 +1030,6 @@ body {
 
 .transportes-list li {
   padding: 0.8rem 0;
-  border-bottom: 1px solid var(--muted);
 }
 
 .transportes-list li:last-child {
@@ -1042,10 +1041,6 @@ body {
   margin: 1.5rem 0 0;
 }
 
-.info-list > li {
-  padding: 0.8rem 0;
-  border-bottom: 1px solid var(--muted);
-}
 
 .info-list > li:last-child {
   border-bottom: none;
@@ -1068,12 +1063,14 @@ body {
   text-decoration: none;
   font-weight: 600;
   transition: color 0.2s ease;
+  text-decoration: underline;
 }
 
-.info-list a:hover {
-  color: #123026;
-}
 
+.info-text{
+      line-height: 1.6;
+
+}
 
 
 
