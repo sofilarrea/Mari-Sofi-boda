@@ -928,6 +928,30 @@ body {
     text-align: left;
   }
 }
+.footer-minimal {
+  background: #fff;          /* fondo blanco */
+  padding: 1.5rem 0;
+  text-align: center;
+  border-top: 1px solid #eee; /* línea sutil arriba */
+}
+
+.footer-minimal p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #555;
+  font-family: system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+}
+
+.footer-minimal a {
+  color: #555;               /* mismo tono, ultra discreto */
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.footer-minimal a:hover {
+  color: #000;               /* un poco más fuerte al hover */
+}
 
 
 
