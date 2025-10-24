@@ -870,7 +870,7 @@ body {
 }
 
 .info-section {
-  padding: 2rem 2rem;
+  padding: 0 2rem;
   background: #fdfdfd;
 }
 
@@ -1035,6 +1035,43 @@ body {
 
 .transportes-list li:last-child {
   border-bottom: none;
+}
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+}
+
+.info-list > li {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--muted);
+}
+
+.info-list > li:last-child {
+  border-bottom: none;
+}
+
+.info-list ul {
+  list-style: none;
+  padding-left: 1rem;
+  margin-top: 0.8rem;
+}
+
+.info-list ul li {
+  padding: 0.4rem 0;
+  border-bottom: none;
+  font-size: 0.95rem;
+}
+
+.info-list a {
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.info-list a:hover {
+  color: #123026;
 }
 
 
