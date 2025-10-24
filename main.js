@@ -53,41 +53,36 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
   const restrRadios = document.querySelectorAll("input[name='restricciones_toggle']");
   const restrText   = document.getElementById("restricciones-text");
 
+  // --- Mostrar/ocultar campo de restricciones ---
   restrRadios.forEach(radio => {
     radio.addEventListener("change", () => {
       if (radio.value === "Sí" && radio.checked) {
         restrText.style.display = "block";
       } else {
         restrText.style.display = "none";
-        restrText.querySelector("input").value = "";
+        restrText.querySelectorAll("input, textarea").forEach(i => i.value = "");
       }
     });
   });
-});
-document.addEventListener("DOMContentLoaded", () => {
-  const restrRadios = document.querySelectorAll("input[name='restricciones_toggle']");
-  const restrText   = document.getElementById("restricciones-text");
 
-  restrRadios.forEach(radio => {
-    radio.addEventListener("change", () => {
-      restrText.style.display = (radio.value === "Sí") ? "block" : "none";
-    });
-  });
+  // --- Mostrar/ocultar pregunta extra pre-boda ---
+  const prebodaRadios = document.querySelectorAll("input[name='preboda_asistencia']");
+  const prebodaExtra  = document.getElementById("preboda-extra");
 
-  const partidoRadios = document.querySelectorAll("input[name='ira_partido']");
-  const eventoExtra   = document.getElementById("evento-extra");
-
-  partidoRadios.forEach(radio => {
+  prebodaRadios.forEach(radio => {
     radio.addEventListener("change", () => {
       if (radio.value === "No" && radio.checked) {
-        eventoExtra.style.display = "block";
+        prebodaExtra.style.display = "block";
       } else {
-        eventoExtra.style.display = "none";
-        eventoExtra.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
+        prebodaExtra.style.display = "none";
+        prebodaExtra.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
       }
     });
   });

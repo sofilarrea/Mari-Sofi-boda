@@ -8,30 +8,35 @@ document.addEventListener("DOMContentLoaded", () => {
   const form     = document.querySelector("#rsvp-form");
   const statusEl = document.querySelector("#form-status");
 
-  // --- Mostrar/ocultar restricciones
-  const dietOptions = document.querySelector("#diet-options");
-  const otrosCheck  = document.querySelector("#diet-otros");
-  const otrosInput  = document.querySelector("#diet-otros-text");
+  // === Restricciones alimentarias ===
+  const restrRadios = document.querySelectorAll("input[name='restricciones_toggle']");
+  const restrText   = document.getElementById("restricciones-text");
 
-  document.querySelectorAll("input[name='restricciones_toggle']").forEach(radio => {
+  restrRadios.forEach(radio => {
     radio.addEventListener("change", () => {
-      if (radio.value === "Sí") {
-        dietOptions.hidden = false;
-      } else {
-        dietOptions.hidden = true;
-        otrosInput.hidden = true;
-        otrosInput.value = "";
-        otrosCheck.checked = false;
+      restrText.style.display = (radio.value === "Sí") ? "block" : "none";
+      if (radio.value === "No") {
+        restrText.querySelector("input").value = "";
       }
     });
   });
 
-  otrosCheck?.addEventListener("change", () => {
-    otrosInput.hidden = !otrosCheck.checked;
-    if (!otrosCheck.checked) otrosInput.value = "";
+  // === Evento pre-boda ===
+  const partidoRadios = document.querySelectorAll("input[name='preboda_asistencia']");
+  const prebodaExtra  = document.getElementById("preboda-extra");
+
+  partidoRadios.forEach(radio => {
+    radio.addEventListener("change", () => {
+      if (radio.value === "No" && radio.checked) {
+        prebodaExtra.style.display = "block";
+      } else {
+        prebodaExtra.style.display = "none";
+        prebodaExtra.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
+      }
+    });
   });
 
-  // --- Submit
+  // === Envío con EmailJS ===
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
@@ -43,8 +48,10 @@ document.addEventListener("DOMContentLoaded", () => {
       cantidad_personas: form.cantidad_personas?.value || "",
       lleva_ninos: form.querySelector('input[name="lleva_ninos"]:checked')?.value || "",
       transporte: form.querySelector('input[name="transporte"]:checked')?.value || "",
-      restricciones: Array.from(form.querySelectorAll('input[name="restricciones[]"]:checked')).map(i => i.value).join(", "),
-      otros: otrosCheck?.checked ? (otrosInput?.value.trim() || "Otros (sin especificar)") : ""
+      restricciones: form.querySelector('input[name="restricciones_toggle"]:checked')?.value || "No",
+      restricciones_detalle: restrText.querySelector("input")?.value.trim() || "Ninguna",
+      preboda_asistencia: form.querySelector('input[name="preboda_asistencia"]:checked')?.value || "No respondió",
+      preboda_evento: form.querySelector('input[name="preboda_evento"]:checked')?.value || "No respondió"
     };
 
     if (!data.name || !data.email || !data.asistira) {
@@ -61,9 +68,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       statusEl.textContent = "💌 ¡Confirmación enviada con éxito!";
       statusEl.style.color = "#0a7d32";
+
       form.reset();
-      dietOptions.hidden = true;
-      otrosInput.hidden  = true;
+      restrText.style.display = "none";
+      prebodaExtra.style.display = "none";
 
     } catch (err) {
       console.error("EmailJS Error:", err);
