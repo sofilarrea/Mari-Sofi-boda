@@ -22,7 +22,7 @@ body {
 }
 
 
-
+/* 
 
 .hero-title{
   font-family:"Cormorant Garamond", serif;
@@ -31,7 +31,7 @@ body {
   line-height:.95;
   margin:0;
   letter-spacing:.5px;
-}
+} */
 .hero-dot{ /* punto final grande, opcional */
   font-weight:700;
 }
@@ -180,7 +180,6 @@ body {
   .side-nav{ display:none; }
   .hud-location{ display:none; }
   .hud-initials, .hud-pages{ font-size:12px }
-  .hero-title{ font-size:clamp(40px, 12vw, 88px) }
 }
 .hero-frame {
   position: relative;
@@ -871,7 +870,7 @@ body {
 }
 
 .info-section {
-  padding: 6rem 2rem;
+  padding: 2rem 2rem;
   background: #fdfdfd;
 }
 
@@ -928,7 +927,115 @@ body {
 .footer-minimal a:hover {
   color: #000;               /* un poco más fuerte al hover */
 }
+/* ===== Puntos importantes ===== */
+.puntos {
+  background: var(--bg);
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
 
+.puntos-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+.puntos-list li {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--muted);
+}
+
+.puntos-list li:last-child {
+  border-bottom: none;
+}
+
+.puntos-list strong {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.transportes-list a {
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.transportes-list a:hover {
+  color: #123026; /* verde más oscuro */
+}
+/* ===== Sección Vuelos ===== */
+.vuelos {
+  background: var(--bg);
+  max-width: 800px;
+  margin: 0 auto 4rem;
+  text-align: left;
+}
+
+.vuelos .info-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink);
+  margin: 1rem 0 2rem;
+}
+
+.vuelos-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+.vuelos-list li {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--muted);
+}
+
+.vuelos-list li:last-child {
+  border-bottom: none;
+}
+
+.vuelos-list strong {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  color: var(--ink);
+}
+/* ===== Sección Transportes ===== */
+.transportes {
+  background: var(--bg);
+  max-width: 800px;
+  margin: 0 auto 4rem;
+  text-align: left;
+}
+
+.transportes .info-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink);
+  margin: 1rem 0;
+}
+
+.transportes-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1.5rem;
+}
+
+.transportes-list li {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--muted);
+}
+
+.transportes-list li:last-child {
+  border-bottom: none;
+}
 
 
 
@@ -951,7 +1058,14 @@ body {
     text-align: center;
     padding: 80px 8%;
   } */
+.hero-title {
+    font-size: clamp(38px, 8vw, 120px);
+}
 
+.mapa img{
+      max-width: 327px;
+    border-radius: 10px;
+}
 
 
 
