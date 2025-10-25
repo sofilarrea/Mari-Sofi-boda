@@ -1071,7 +1071,9 @@ body {
       line-height: 1.6;
 
 }
-
+.info-text-mobile{
+  display: none;
+}
 
 
 
